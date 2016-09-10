@@ -83,4 +83,6 @@ for i in a:
 print("You enter", counter, "character(s)")
 ```
 ##Extra credit
-[Try it :)][http://acmgnyr.org/year2015/problems/a.pdf]
+[Try it][1]
+
+[1][http://acmgnyr.org/year2015/problems/a.pdf]
