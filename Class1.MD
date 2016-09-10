@@ -68,3 +68,19 @@ for i in range(1, 10):
 for i in "abc":
 	pass
 ```
+
+##Homework
+Modify the following code to include numeric and alphabetical counting
+
+####Template
+```python
+a = input()
+counter = 0
+for i in a:
+	if i.isalpha():
+		counter += 1
+
+print("You enter", counter, "character(s)")
+```
+##Extra credit
+[Try it :)][http://acmgnyr.org/year2015/problems/a.pdf]
