@@ -96,9 +96,3 @@
 # 	counter = counter + 1
 
 # print("Your enter ", counter, " character(s)")
-
-
-
-
-
-
