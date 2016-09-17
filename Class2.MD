@@ -7,4 +7,15 @@ for i in range(1, n):
 	print("*" * i)
 ```
 
+Input: 
+```python
+n = 3
+```
+Output:
+```python
+*
+**
+***
+```
+
 ##Homework
