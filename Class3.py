@@ -73,9 +73,9 @@ def eight_queens():
 			if current_row == 8: 
 				for i in b:
 					print(i)
+				print()
 				count += 1
 				current_row, current_col = back_tracking(current_row)
-				
 
 			if current_row < 0 or current_row > 8:
 				break
@@ -83,6 +83,7 @@ def eight_queens():
 		else:
 			current_col += 1
 			if current_col > 7:
+
 				current_row, current_col = back_tracking(current_row)
 
 				if current_row < 0 or current_row > 8:
