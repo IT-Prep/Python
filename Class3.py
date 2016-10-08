@@ -58,7 +58,6 @@ def back_tracking(row):
 	return row, col
 
 def eight_queens():
-	
 
 	current_row = 0
 	current_col = 0
@@ -90,4 +89,10 @@ def eight_queens():
 					break
 	print("Total Possibility: ", count)	
 
-eight_queens()
+a = input("Please enter a number: ")
+while a.isdigit() == False:
+	a = input("Invalid Input! Please Enter a Number: ")
+int_value = int(a)
+print(int_value)
+
+# eight_queens()

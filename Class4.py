@@ -43,10 +43,8 @@ def bubble_sort(list):
 	#this is wrong, write me the correct code⬇️
 	for _ in list:
 		_bubble_sort(list)
-
 	print(list)
 
 a = [5,2,6,7,9,1,0,3]
 bubble_sort(a)
 # new_list = selection_sort(a)
-
