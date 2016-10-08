@@ -7,10 +7,10 @@ b = [[0,0,0,0,0,0,0,0],
 [0,0,0,0,0,0,0,0],
 [0,0,0,0,0,0,0,0]]
 
-def check(row, col):
+def check(row, col, b_len):
 	#上边
 
-	if row > 7 or col > 7:
+	if row > b_len - 1 or col > b_len - 1:
 		return False
 
 	for i in range(row):
@@ -36,7 +36,7 @@ def check(row, col):
 	for i in range(t_range):
 		t_row = row - i - 1
 		t_col = col + i + 1
-		if t_row > 7 or t_col > 7:
+		if t_row > b_len - 1 or t_col > b_len - 1:
 			break
 		elif b[t_row][t_col] == 1:
 			return False
@@ -57,35 +57,35 @@ def back_tracking(row):
 
 	return row, col
 
-def eight_queens():
+def eight_queens(b_len):
 
 	current_row = 0
 	current_col = 0
 	count = 0
 	while True:
 	# print(current_row, current_col)
-		if check(current_row, current_col) == True:
+		if check(current_row, current_col, b_len) == True:
 			b[current_row][current_col] = 1
 			current_row += 1
 			current_col = 0
 
-			if current_row == 8: 
+			if current_row == b_len: 
 				for i in b:
 					print(i)
 				print()
 				count += 1
 				current_row, current_col = back_tracking(current_row)
 
-			if current_row < 0 or current_row > 8:
+			if current_row < 0 or current_row > b_len:
 				break
 
 		else:
 			current_col += 1
-			if current_col > 7:
+			if current_col > b_len - 1:
 
 				current_row, current_col = back_tracking(current_row)
 
-				if current_row < 0 or current_row > 8:
+				if current_row < 0 or current_row > b_len:
 					break
 	print("Total Possibility: ", count)	
 
@@ -95,4 +95,4 @@ while a.isdigit() == False:
 int_value = int(a)
 print(int_value)
 
-# eight_queens()
+eight_queens(int_value)
