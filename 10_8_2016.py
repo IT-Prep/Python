@@ -7,23 +7,32 @@ def check(index):
 		right = index - i  + b[index]
 
 		if b[index] == value_i:
-			print("UP WRONG")
 			return False
 		if left >= 0 and left == value_i:
-			print("UP LEFT WRONG")
 			return False
 		if right <= 7 and right == value_i:
-			print("UP RIGHT WRONG")
 			return False
 	return True
 
 def eight_queens():
+	i = 0
+	while True:
 
-	for j in range(8):
-		b[index] = j
-		if check(index):
-			break
+		if b[i] >= 7:
+			b[i] = -1
+			i -= 1
 
-	print(b)
+		if i <= -1:
+			return
+
+		for j in range(b[i] + 1, 8):
+			b[i] = j
+			if check(i):
+				i += 1
+				break
+
+		if i == 8:
+			print(b)
+			i = 7
 
 eight_queens()
