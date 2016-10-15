@@ -1,39 +1,49 @@
-b = [-1] * 8
+def getBoard(b_len):
+	return [-1] * b_len
 
-def check(index):
+def check(board, index):
+
+	max_index = len(board) - 1
+
 	for i in range(index):
-		value_i = b[i]
-		left = i - (index - b[index])
-		right = index - i  + b[index]
+		value_i = board[i]
+		left = i - (index - board[index])
+		right = index - i  + board[index]
 
-		if b[index] == value_i:
+		if board[index] == value_i:
 			return False
 		if left >= 0 and left == value_i:
 			return False
-		if right <= 7 and right == value_i:
+		if right <= max_index and right == value_i:
 			return False
 	return True
 
-def eight_queens():
+def eight_queens(board):
+
 	i = 0
+	b_len = len(board)
+	max_index = b_len - 1
 	solution_count = 0
+	
 	while True:
-		if b[i] >= 7:
-			b[i] = -1
+		if board[i] >= max_index:
+			board[i] = -1
 			i -= 1
 
 		if i <= -1:
 			return
 
-		for j in range(b[i] + 1, 8):
-			b[i] = j
-			if check(i):
+		for j in range(board[i] + 1, b_len):
+			board[i] = j
+			if check(board, i):
 				i += 1
 				break
 
-		if i == 8:
+		if i == b_len:
 			solution_count += 1
-			print(solution_count, b)
-			i = 7
+			print(solution_count, board)
+			i = max_index
 
-eight_queens()
+i = 9
+board = getBoard(i)
+eight_queens(board)
