@@ -16,8 +16,8 @@ def check(index):
 
 def eight_queens():
 	i = 0
+	solution_count = 0
 	while True:
-
 		if b[i] >= 7:
 			b[i] = -1
 			i -= 1
@@ -32,7 +32,8 @@ def eight_queens():
 				break
 
 		if i == 8:
-			print(b)
+			solution_count += 1
+			print(solution_count, b)
 			i = 7
 
 eight_queens()
